@@ -4,7 +4,7 @@
     "#",    
     "# File2Array",    
     "# Free to use everywhere as long as this original header is present",    
-    "# https://github.com/runexec/File2array",    
+    "# https://github.com/runexec/File2Array",    
     "#",    
     "",    
     "fp=\"${1}\"",    
