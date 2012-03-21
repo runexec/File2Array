@@ -10,18 +10,20 @@ max=`cat "${fp}" | wc -l`
 lines=()
 
 echo "var array = ["
+
+IFS=''
 cat "${fp}" | while read data
 do
 	if [ $l == $max ]
 	then
 		break
 	fi
-	line=`printf '%s\n' "${data}" | sed -e s/\"/\\\\\\\\\"/g`
-	line=`printf '"%s"' "${line}"`
+	line=`printf '%s\n' "$data" | sed -e s/\"/\\\\\\\\\"/g`
+	line=`printf '"%s"' "$line"`
 
 	if [ $l != $[max-1] ]
 	then
-		echo "${line},"
+		echo "$line,"
 	else
 		echo "$line"
 	fi

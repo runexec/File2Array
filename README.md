@@ -1,11 +1,11 @@
-###### Turns any file into a JavaScript Array / A Node.js utility
-		$ ./file2array.sh file2array.sh     
+###### Turns any file into a JavaScript Array / A Node.js utility    
+   	$ ./file2array.sh file2array.sh         
     var array = [    
-    "#",    
-    "# File2Array",    
+    "#!/bin/bash",    
+    "# File2array",    
     "# Free to use everywhere as long as this original header is present",    
     "# https://github.com/runexec/File2Array",    
-    "#",    
+    "#  ",    
     "",    
     "fp=\"${1}\"",    
     "l=0",    
@@ -13,24 +13,26 @@
     "lines=()",    
     "",    
     "echo \"var array = [\"",    
+    "",    
+    "IFS=''",    
     "cat \"${fp}\" | while read data",    
     "do",    
-    "if [ $l == $max ]",    
-    "then",    
-    "break",    
-    "fi",    
-    "line=`printf '%sn' \"${data}\" | sed -e s/\"/\\\\\"/g`",    
-    "line=`printf '\"%s\"' \"${line}\"`",    
+    "	if [ $l == $max ]",    
+    "	then",    
+    "		break",    
+    "	fi",    
+    "	line=`printf '%sn' \"$data\" | sed -e s/\"/\\\\\"/g`",    
+    "	line=`printf '\"%s\"' \"$line\"`",    
     "",    
-    "if [ $l != $[max-1] ]",    
-    "then",    
-    "echo \"${line},\"",    
-    "else",    
-    "echo \"$line\"",    
-    "fi",    
+    "	if [ $l != $[max-1] ]",    
+    "	then",    
+    "		echo \"$line,\"",    
+    "	else",    
+    "		echo \"$line\"",    
+    "	fi",    
     "",    
-    "let l++",    
+    "	let l++",    
     "done",    
     "echo \"];\""    
     ];    
-
+    
