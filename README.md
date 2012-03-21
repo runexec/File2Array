@@ -2,7 +2,7 @@
 		$ ./file2array.sh file2array.sh     
     var array = [    
     "#",    
-    "# File2array",    
+    "# File2Array",    
     "# Free to use everywhere as long as this original header is present",    
     "# https://github.com/runexec/File2array",    
     "#",    
