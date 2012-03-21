@@ -1,4 +1,4 @@
-#
+#!/bin/bash
 # File2array
 # Free to use everywhere as long as this original header is present
 # https://github.com/runexec/File2array
